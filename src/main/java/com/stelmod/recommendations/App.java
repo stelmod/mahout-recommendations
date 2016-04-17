@@ -13,7 +13,9 @@ public class App {
         File inputFile = new File(inputStream.toURI());
         DataModel dataModel = new FileDataModel(inputFile);
 
-        NN_Evaluator nn_evaluator = new NN_Evaluator(dataModel, new int[] {2, 4});
+        long startTime = System.currentTimeMillis();
+        NN_Evaluator nn_evaluator = new NN_Evaluator(dataModel, new int[] {2, 8, 20, 50, 100, 300});
         nn_evaluator.evaluateModel();
+        System.out.println("Elapsed time: " + (System.currentTimeMillis() - startTime) / 1000 + " seconds");
     }
 }

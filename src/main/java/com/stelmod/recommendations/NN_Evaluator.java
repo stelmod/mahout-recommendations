@@ -23,7 +23,7 @@ public class NN_Evaluator {
 
     private double trainAndEvaluareError(DataModel dataModel, RecommenderEvaluator evaluator, int neighbourhoodSize) throws TasteException {
         RecommenderBuilder recommenderBuilder = new NN_Pearson_GenericRecommender(neighbourhoodSize);
-        double score = evaluator.evaluate(recommenderBuilder, null, dataModel, 0.7, 1.0);
+        double score = evaluator.evaluate(recommenderBuilder, null, dataModel, 0.8, 1.0);
         System.out.println("Neighbourhood size: " + neighbourhoodSize + ", RMSE: " + score);
         return score;
     }
