@@ -18,6 +18,7 @@ public class NN_Evaluator {
     }
 
     public void evaluateModel() throws Exception {
+        System.out.println("Collaborative filtering recommendations");
         UserSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
 
         for (int neighbourhoodSize : neighbourhoodSizes) {

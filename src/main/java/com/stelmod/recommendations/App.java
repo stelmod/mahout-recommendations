@@ -16,6 +16,9 @@ public class App {
         long startTime = System.currentTimeMillis();
         NN_Evaluator nn_evaluator = new NN_Evaluator(dataModel, new int[] {2, 8, 20, 50, 100, 300});
         nn_evaluator.evaluateModel();
+
+        SVD_evaluator svd_evaluator = new SVD_evaluator(dataModel, new int[] {5, 10, 25, 50, 100});
+        svd_evaluator.evaluateModel();
         System.out.println("Elapsed time: " + (System.currentTimeMillis() - startTime) / 1000 + " seconds");
     }
 }
