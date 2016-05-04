@@ -14,6 +14,10 @@ import java.util.List;
 
 public class UserPredictions {
 
+    public static final int USER_ID = 285;
+    public static final int NUMBER_OF_RECOMMENDATIONS = 10;
+    public static final int NEIGHBORHOOD_SIZE = 20;
+
     public static void main(String[] args) throws Exception {
         URL inputStream = Thread.currentThread().getContextClassLoader().getResource("ml-small.csv");
 
@@ -21,9 +25,10 @@ public class UserPredictions {
         DataModel dataModel = new FileDataModel(inputFile);
 
         UserSimilarity similarity = new PearsonCorrelationSimilarity(dataModel);
-        RecommenderBuilder recommenderBuilder = new NN_Pearson_GenericRecommender(20, similarity);
+        RecommenderBuilder recommenderBuilder = new NN_Pearson_GenericRecommender(NEIGHBORHOOD_SIZE, similarity);
         Recommender recommender = recommenderBuilder.buildRecommender(dataModel);
-        List<RecommendedItem> recommendedItems = recommender.recommend(285, 10);
+
+        List<RecommendedItem> recommendedItems = recommender.recommend(USER_ID, NUMBER_OF_RECOMMENDATIONS);
         recommendedItems.forEach(item -> System.out.println(item));
     }
 }
