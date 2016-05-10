@@ -14,7 +14,7 @@ import java.util.List;
 
 public class UserPredictions {
 
-    public static final int USER_ID = 285;
+    public static final int USER_ID = 103;
     public static final int NUMBER_OF_RECOMMENDATIONS = 10;
     public static final int NEIGHBORHOOD_SIZE = 20;
 
